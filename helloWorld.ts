@@ -1,23 +1,17 @@
-"use strict";
-export._esModule = true;
-var  Person= / **class */ function name(params:type) {
-    
+export class Person {
+    firstName: string;
+    lastName: string;
 }
-   function persona() {
-       
-   }  
 
-let gio:Person = {
-    firstName: "giovi",
-    lastName:"Brañes"
+var gio: Person = {
+    firstName: "Giovana",
+    lastName: "Brañez"
 };
-let lml: Person = {
-    firstName:  "briam",
-    lastName: "coria"
-}
+
+var lml: Person = {
+    firstName: "Brian",
+    lastName: "Coria"
+};
+
 console.log(gio);
 console.log(lml);
-
-
-
-
