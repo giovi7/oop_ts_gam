@@ -28,13 +28,13 @@ export class Estudiante {
     private nombre: string;
     private apellido: string;
     private  correo: string;
-    private direccion: Dierccion;
+    private direccion: Dierccion[];
 
-    constructor(nom: string, ape: string, co: string, dir: Direccion) {
+    constructor(nom: string, ape: string, co: string, dir: Direccion[]) {
         this.nombre = nom;
         this.apellido = ape;
         this.correo = co;
-        this.direccion = Direccion;
+        this.direccion = Direccion[];
 
     }
 }
@@ -42,13 +42,13 @@ exportc class Docente {
     private nombre: string;
     private apellido: string;
     private  correo: string;
-    private direccion: Dierccion;
+    private direccion: Dierccion[];
 
-    constructor(nom: string, ape: string, co: string, dir: Direccion) {
+    constructor(nom: string, ape: string, co: string, dir: Direccion[]) {
         this.nombre = nom;
         this.apellido = ape;
         this.correo = co;
-        this.direccion = Direccion;
+        this.direccion = Direccion[];
         
     }
 }
