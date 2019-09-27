@@ -20,7 +20,7 @@ export class Curso {
         this.nombre = nom;
         this.descripcion = des;
         this.precio = prec;
-        this.docente = Docente;
+        this.docente = doc;
     }
 }
 
@@ -28,27 +28,27 @@ export class Estudiante {
     private nombre: string;
     private apellido: string;
     private  correo: string;
-    private direccion: Dierccion[];
+    private direccion: Direccion[];
 
     constructor(nom: string, ape: string, co: string, dir: Direccion[]) {
         this.nombre = nom;
         this.apellido = ape;
         this.correo = co;
-        this.direccion = Direccion[];
+        this.direccion = dir;
 
     }
 }
-exportc class Docente {
+export class Docente {
     private nombre: string;
     private apellido: string;
     private  correo: string;
-    private direccion: Dierccion[];
+    private direccion: Direccion[];
 
     constructor(nom: string, ape: string, co: string, dir: Direccion[]) {
         this.nombre = nom;
         this.apellido = ape;
         this.correo = co;
-        this.direccion = Direccion[];
+        this.direccion = dir;
         
     }
 }
