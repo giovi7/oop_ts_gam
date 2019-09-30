@@ -11,6 +11,13 @@ exports.__esModule = true;
  * Un estudiante o profesor puede tener una o mas direcciones, al mismo tiempo una direccion esta
  * compuesta por la siguiente informacion: ciudad, barrio, calle.
  * Para los profesores en particular se nesesita guardar su profesion
+ *
+ * Crear la clase PlataformaEducativa, la misma debe tener el nombre de la plataforma educativa,
+ * un listado donde se debe guardar el registro de los cursos comprados.
+ * La clase PlataformaEducativa debe contener un metodo que sirva para registrar
+ * la venta de un curso, el metodo debe recibir como argumento(parametro de entrada).
+ * Una instancia de la clase Compra curso
+
  */
 var Curso = /** @class */ (function () {
     function Curso(nom, des, prec, doc) {
@@ -111,6 +118,9 @@ var Docente = /** @class */ (function () {
     Docente.prototype.getDireccion = function () {
         return this.direccion;
     };
+    Docente.prototype.agregarDireccion = function () {
+        console.log(this.direccion);
+    };
     return Docente;
 }());
 exports.Docente = Docente;
@@ -168,6 +178,12 @@ var Direccion = /** @class */ (function () {
     return Direccion;
 }());
 exports.Direccion = Direccion;
+var PlataformaEducativa = /** @class */ (function () {
+    function PlataformaEducativa() {
+    }
+    return PlataformaEducativa;
+}());
+exports.PlataformaEducativa = PlataformaEducativa;
 /**
  * pruebas
  */
@@ -178,15 +194,48 @@ exports.Direccion = Direccion;
  * Crear 12 instancias de CompraCurso
  * Hacer correr y verificar el correcto funcionamiento de las clases
  * implementadas.
+ * Agregar un metodo a la clase docente y estudiante que le permita agregar una direccion,
+ * la nueva direccion debe agregarse como un elemento mas sobre las direcciones ya existentes.
  * Subir a su repositorio
  */
 var direccion1 = new Direccion("Cochabamba", "Fortaleza", "Sin Nombre");
-var dir = [direccion1];
+var direcion1 = [direccion1];
 console.log(direccion1);
-var docente1 = new Docente("Marcelo", "Antezana", "dkfkd@gmail.com", dir);
-var docente2 = new Docente("David", "Claros", "sdj@gmail.com", dir);
+var direccion2 = new Direccion("Cochabamba", "primero de mayo", "zona5");
+var direcion2 = [direccion2];
+console.log(direccion2);
+var direccion3 = new Direccion("Cochabamba", "azirumarca", "Sin Nombre");
+var direcion3 = [direccion3];
+console.log(direccion3);
+var direccion4 = new Direccion("Cochabamba", "praderas", "Sin Nombre");
+var direcionc4 = [direccion4];
+console.log(direccion4);
+var direccion5 = new Direccion("Cochabamba", "Fortaleza chica", "Sin Nombre");
+var direcion5 = [direccion5];
+console.log(direccion5);
+var direccion6 = new Direccion("Cochabamba", "bolivar", "calle1");
+var direcion6 = [direccion6];
+console.log(direccion6);
+var direccion7 = new Direccion("Cochabamba", "Fortaleza", "Sin Nombre");
+var direcion7 = [direccion7];
+console.log(direccion7);
+var direccion8 = new Direccion("Cochabamba", "tamborada", "pampa");
+var direcion8 = [direccion8];
+console.log(direccion8);
+var direccion9 = new Direccion("Cochabamba", "itocta", "Sin Nombre");
+var direcion9 = [direccion9];
+console.log(direccion9);
+var direccion10 = new Direccion("Cochabamba", "villa mexico", "Sin Nombre");
+var direcion10 = [direccion10];
+console.log(direccion10);
+var direccion11 = new Direccion("Cochabamba", "pucarita", "Sin Nombre");
+var direcionc11 = [direccion11];
+console.log(direccion11);
+var docente1 = new Docente("Marcelo", "Antezana", "dkfkd@gmail.com", direcion1);
+var docente2 = new Docente("David", "Claros", "sdj@gmail.com", direcion2);
 console.log(docente1);
 console.log(docente2);
+docente1.agregarDireccion();
 var curso1 = new Curso("programacion", "nivel basico", 200, docente1);
 var curso2 = new Curso("robotica", "nivel medio", 150, docente2);
 var curso3 = new Curso("web", "nivel basico", 180, docente1);
@@ -197,16 +246,16 @@ console.log(curso2);
 console.log(curso3);
 console.log(curso4);
 console.log(curso5);
-var estudiante1 = new Estudiante("Gio", "Brañez", "gi@gmail.com", dir);
-var estudiante2 = new Estudiante("gladis", "Zarsuri", "glad@.com", dir);
-var estudiante3 = new Estudiante("Rene", "Antezana", "sdhd@.com", dir);
-var estudiante4 = new Estudiante("Erick", "Fernandez", "dsbfjd@.com", dir);
-var estudiante5 = new Estudiante("Diego", "Pinto", "shdh@.com", dir);
-var estudiante6 = new Estudiante("Juan", "Oropeza", "gscnks@.com", dir);
-var estudiante7 = new Estudiante("Yuss", "Meneces", "mcis@.com", dir);
-var estudiante8 = new Estudiante("Miguel", "Salvatierra", "ansvdhs@.com", dir);
-var estudiante9 = new Estudiante("Abel", "Montecinos", "xmncmx@.com", dir);
-var estudiante10 = new Estudiante("Samuel", "Alegre", "amk@.com", dir);
+var estudiante1 = new Estudiante("Gio", "Brañez", "gi@gmail.com", direcion7);
+var estudiante2 = new Estudiante("gladis", "Zarsuri", "glad@.com", direcion2);
+var estudiante3 = new Estudiante("Rene", "Antezana", "sdhd@.com", direcion3);
+var estudiante4 = new Estudiante("Erick", "Fernandez", "dsbfjd@.com", direcion1);
+var estudiante5 = new Estudiante("Diego", "Pinto", "shdh@.com", direcionc4);
+var estudiante6 = new Estudiante("Juan", "Oropeza", "gscnks@.com", direcion5);
+var estudiante7 = new Estudiante("Yuss", "Meneces", "mcis@.com", direcion6);
+var estudiante8 = new Estudiante("Miguel", "Salvatierra", "ansvdhs@.com", direcion10);
+var estudiante9 = new Estudiante("Abel", "Montecinos", "xmncmx@.com", direcion8);
+var estudiante10 = new Estudiante("Samuel", "Alegre", "amk@.com", direcion9);
 console.log(estudiante1);
 console.log(estudiante2);
 console.log(estudiante3);

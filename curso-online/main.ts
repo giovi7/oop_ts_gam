@@ -9,6 +9,13 @@
  * Un estudiante o profesor puede tener una o mas direcciones, al mismo tiempo una direccion esta 
  * compuesta por la siguiente informacion: ciudad, barrio, calle.
  * Para los profesores en particular se nesesita guardar su profesion
+ * 
+ * Crear la clase PlataformaEducativa, la misma debe tener el nombre de la plataforma educativa,
+ * un listado donde se debe guardar el registro de los cursos comprados.
+ * La clase PlataformaEducativa debe contener un metodo que sirva para registrar
+ * la venta de un curso, el metodo debe recibir como argumento(parametro de entrada). 
+ * Una instancia de la clase Compra curso
+ * 
  */
 export class Curso {
     private nombre: string;
@@ -126,6 +133,11 @@ export class Docente {
     public getDireccion() : Direccion[] {
         return this.direccion;
     }
+    public agregarDireccion(){
+        console.log(this.direccion);    
+    }
+
+
 }
 
 export class CompraCurso {
@@ -178,12 +190,35 @@ export class Direccion {
     public getBarrio() : string {
         return this.barrio;
     }
-    public setCalle(ca : string) {
+    public setCalle(ca : string): void {
         this.calle = ca;
     }
     public getCalle() : string {
         return this.calle;
     }  
+}
+ 
+export class PlataformaEducativa{
+    private nombre: string;
+    private lista: CompraCurso[];
+    constructor(nom:string, lis: CompraCurso[]){
+        this.nombre = nom;
+        this.lista = lis;
+    }
+    
+    public setNombre(nom: string): void {
+        this.nombre = nom;
+    }
+    public getNombre() : string {
+        return this.nombre;
+    }
+    public setLista(lis : CompraCurso[]): void {
+        this.lista = lis;
+    }
+    public RegistroCompraCurso(cursoComp: CompraCurso): void {
+        this.lista.push(cursoComp);  
+    }
+       
 }
 
 /**
@@ -196,16 +231,59 @@ export class Direccion {
  * Crear 12 instancias de CompraCurso
  * Hacer correr y verificar el correcto funcionamiento de las clases
  * implementadas. 
+ * Agregar un metodo a la clase docente y estudiante que le permita agregar una direccion,
+ * la nueva direccion debe agregarse como un elemento mas sobre las direcciones ya existentes.
  * Subir a su repositorio
  */
  let direccion1: Direccion = new Direccion("Cochabamba", "Fortaleza", "Sin Nombre");
- let dir:Direccion[] = [direccion1]
+ let direcion1:Direccion[] = [direccion1]
  console.log(direccion1);
 
- let docente1: Docente = new Docente("Marcelo", "Antezana","dkfkd@gmail.com", dir);
- let docente2: Docente = new Docente("David", "Claros","sdj@gmail.com", dir);
+ let direccion2: Direccion = new Direccion("Cochabamba", "primero de mayo", "zona5");
+ let direcion2:Direccion[] = [direccion2]
+ console.log(direccion2);
+
+ let direccion3: Direccion = new Direccion("Cochabamba", "azirumarca", "Sin Nombre");
+ let direcion3:Direccion[] = [direccion3]
+ console.log(direccion3);
+
+ let direccion4: Direccion = new Direccion("Cochabamba", "praderas", "Sin Nombre");
+ let direcionc4:Direccion[] = [direccion4]
+ console.log(direccion4);
+
+ let direccion5: Direccion = new Direccion("Cochabamba", "Fortaleza chica", "Sin Nombre");
+ let direcion5:Direccion[] = [direccion5]
+ console.log(direccion5);
+
+ let direccion6: Direccion = new Direccion("Cochabamba", "bolivar", "calle1");
+ let direcion6:Direccion[] = [direccion6]
+ console.log(direccion6);
+
+ let direccion7: Direccion = new Direccion("Cochabamba", "Fortaleza", "Sin Nombre");
+ let direcion7:Direccion[] = [direccion7]
+ console.log(direccion7);
+
+ let direccion8: Direccion = new Direccion("Cochabamba", "tamborada", "pampa");
+ let direcion8:Direccion[] = [direccion8]
+ console.log(direccion8);
+
+ let direccion9: Direccion = new Direccion("Cochabamba", "itocta", "Sin Nombre");
+ let direcion9:Direccion[] = [direccion9]
+ console.log(direccion9);
+
+ let direccion10: Direccion = new Direccion("Cochabamba", "villa mexico", "Sin Nombre");
+ let direcion10:Direccion[] = [direccion10]
+ console.log(direccion10);
+
+ let direccion11: Direccion = new Direccion("Cochabamba", "pucarita", "Sin Nombre");
+ let direcionc11:Direccion[] = [direccion11]
+ console.log(direccion11);
+
+ let docente1: Docente = new Docente("Marcelo", "Antezana","dkfkd@gmail.com", direcion1);
+ let docente2: Docente = new Docente("David", "Claros","sdj@gmail.com", direcion2,);
  console.log(docente1);
  console.log(docente2);
+ docente1.agregarDireccion();
  
  let curso1: Curso = new Curso("programacion", "nivel basico", 200, docente1);
  let curso2: Curso = new Curso("robotica", "nivel medio", 150, docente2);
@@ -218,16 +296,16 @@ export class Direccion {
  console.log(curso4);
  console.log(curso5);
  
- let estudiante1: Estudiante = new Estudiante("Gio", "Brañez", "gi@gmail.com",dir);
- let estudiante2: Estudiante = new Estudiante("gladis", "Zarsuri", "glad@.com", dir);
- let estudiante3: Estudiante = new Estudiante("Rene", "Antezana", "sdhd@.com", dir);
- let estudiante4: Estudiante = new Estudiante("Erick", "Fernandez" , "dsbfjd@.com", dir);
- let estudiante5: Estudiante = new Estudiante("Diego", "Pinto", "shdh@.com", dir);
- let estudiante6: Estudiante = new Estudiante("Juan", "Oropeza", "gscnks@.com", dir);
- let estudiante7: Estudiante = new Estudiante("Yuss", "Meneces", "mcis@.com", dir);
- let estudiante8: Estudiante = new Estudiante("Miguel", "Salvatierra", "ansvdhs@.com", dir);
- let estudiante9: Estudiante = new Estudiante("Abel", "Montecinos", "xmncmx@.com", dir);
- let estudiante10: Estudiante = new Estudiante("Samuel", "Alegre", "amk@.com", dir);
+ let estudiante1: Estudiante = new Estudiante("Gio", "Brañez", "gi@gmail.com",direcion7);
+ let estudiante2: Estudiante = new Estudiante("gladis", "Zarsuri", "glad@.com", direcion2);
+ let estudiante3: Estudiante = new Estudiante("Rene", "Antezana", "sdhd@.com", direcion3);
+ let estudiante4: Estudiante = new Estudiante("Erick", "Fernandez" , "dsbfjd@.com", direcion1);
+ let estudiante5: Estudiante = new Estudiante("Diego", "Pinto", "shdh@.com", direcionc4);
+ let estudiante6: Estudiante = new Estudiante("Juan", "Oropeza", "gscnks@.com", direcion5);
+ let estudiante7: Estudiante = new Estudiante("Yuss", "Meneces", "mcis@.com", direcion6);
+ let estudiante8: Estudiante = new Estudiante("Miguel", "Salvatierra", "ansvdhs@.com", direcion10);
+ let estudiante9: Estudiante = new Estudiante("Abel", "Montecinos", "xmncmx@.com", direcion8);
+ let estudiante10: Estudiante = new Estudiante("Samuel", "Alegre", "amk@.com", direcion9);
  console.log(estudiante1);
  console.log(estudiante2);
  console.log(estudiante3);
@@ -264,3 +342,5 @@ console.log(compraCurso9);
 console.log(compraCurso10);
 console.log(compraCurso11);
 console.log(compraCurso12);
+
+let plataformaEducativa1: PlataformaEducativa = new PlataformaEducativa(compraCurso1,);
